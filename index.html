@@ -1,76 +1,105 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musée Virtuel</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Musée virtuel - Blockhaus Lyssois</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #000;
+            text-align: center;
+        }
+
+        /* Titre principal */
+        header {
+            padding: 20px 10px;
+            border-bottom: 3px solid black;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Contenu principal */
+        main {
+            padding: 60px 20px;
+        }
+
+        /* Boutons encadrés */
+        .box {
+            display: inline-block;
+            border: 3px solid black;
+            padding: 20px 40px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Grand bouton */
+        .box.large {
+            width: 60%;
+            max-width: 600px;
+            font-size: 26px;
+        }
+
+        /* Ligne de boutons */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .button-row .box {
+            font-size: 18px;
+            padding: 15px 25px;
+        }
+
+        /* Section nouveautés */
+        .news {
+            margin-top: 120px;
+        }
+
+        .news .box {
+            width: 50%;
+            max-width: 500px;
+            font-size: 28px;
+        }
+
+        /* Effet hover */
+        .box:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>Musée Virtuel</h1>
-    <nav>
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#galerie">Galerie</a></li>
-            <li><a href="#infos">À propos</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <h1>musée virtuel du groupe les blockhaus lyssois</h1>
+    </header>
 
-<section id="accueil" class="section">
-    <h2>Bienvenue dans le Musée Virtuel</h2>
-    <p>Explorez des œuvres d’art, des artefacts historiques et bien plus encore dans notre espace immersif.</p>
-</section>
-
-<section id="galerie" class="section">
-    <h2>Galerie Interactive</h2>
-
-    <div class="gallery">
-        <div class="item" onclick="openModal('img1.jpg','Mona Lisa','Léonard de Vinci, 1503')">
-            <img src="img1.jpg" alt="Oeuvre 1">
-            <p>Mona Lisa</p>
+    <main>
+        <div class="box large">
+            Visite du musée
         </div>
 
-        <div class="item" onclick="openModal('img2.jpg','La Nuit étoilée','Vincent Van Gogh, 1889')">
-            <img src="img2.jpg" alt="Oeuvre 2">
-            <p>La Nuit étoilée</p>
+        <div class="button-row">
+            <div class="box">plus d’information</div>
+            <div class="box">chapitres personnalisées</div>
+            <div class="box">visite virtuelle d’un blockhaus</div>
         </div>
 
-        <div class="item" onclick="openModal('img3.jpg','Le Cri','Edvard Munch, 1893')">
-            <img src="img3.jpg" alt="Oeuvre 3">
-            <p>Le Cri</p>
+        <div class="news">
+            <div class="box">nouveautés</div>
         </div>
-    </div>
-</section>
+    </main>
 
-<section id="infos" class="section">
-    <h2>À propos du musée</h2>
-    <p>Ce musée virtuel est conçu pour offrir une expérience accessible et immersive à tous.</p>
-</section>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modal-img">
-    <h3 id="modal-title"></h3>
-    <p id="modal-desc"></p>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musée Virtuel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<script src="script.js"></script>
-</body>
-</html>
