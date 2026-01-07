@@ -47,3 +47,41 @@ nav button.active {
 
 /* Optionnel: conteneur content */
 main { padding: 16px; }
+
+/* ===========================
+   VERSION MOBILE
+   =========================== */
+@media screen and (max-width: 768px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    /* Tous les boutons */
+    .bouton {
+        width: 100% !important;
+        max-width: 100%;
+        margin: 12px 0;
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    /* Le gros bouton principal */
+    .grand {
+        font-size: 22px;
+    }
+
+    /* Lignes verticales au lieu d’horizontales */
+    .ligne {
+        margin-top: 25px;
+    }
+}
