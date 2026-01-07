@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/mrC5wQ8t/Whats-App-Image-2025-08-02-at-12-57-33.jpg" />
+    <meta charset="UTF-8">
+    <title>Plus d'informations - Musée virtuel</title>
+
+    <!-- Optimisation mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===========================
+           BASE
+           =========================== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255, 255, 255, 0.88);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* ===========================
+           HEADER
+           =========================== */
+        header {
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* ===========================
+           CONTENU
+           =========================== */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ===========================
+           BOUTONS
+           =========================== */
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 14px;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+            background: linear-gradient(145deg, #ffffff, #e2e2e2);
+        }
+
+        .bouton:active {
+            transform: scale(0.97);
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+        }
+
+        .retour {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* ===========================
+           MOBILE
+           =========================== */
+        @media screen and (max-width: 768px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 95%;
+                margin: 25px auto;
+            }
+
+            .section h2 {
+                font-size: 22px;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+
+            .bouton {
+                width: 100%;
+                margin: 12px 0;
+                font-size: 18px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <header>
+            <h1>Plus d’informations</h1>
+            <p>Comprendre le projet du musée virtuel</p>
+        </header>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Qui sommes-nous ?</h2>
+                <p>
+                    Le groupe <strong>Les Blockhaus Lyssois</strong> est un collectif de passionnée par
+                    l’histoire locale et la préservation du patrimoine militaire de la région.
+                    Nous étudions, documentons et partageons l’histoire des blockhaus et ouvrages
+                    défensifs aux allentours de la ville de Lys-Lez-Lannoy afin de les rendre accessibles au plus grand nombre. Plus d'infos sur notre site !
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Le musée virtuel</h2>
+                <p>
+                    Ce musée virtuel a pour objectif de faire découvrir les blockhaus du Secteur Fortifié de Lille et leurs histoires de manière
+                    interactive et pédagogique. Il propose des visites virtuelles, des galeries
+                    photos, des documents d’archives et des chapitres thématiques adaptés à tous
+                    les niveaux de connaissances.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Nos objectifs</h2>
+                <p>
+                    • Valoriser le patrimoine local<br>
+                    • Transmettre l’histoire aux nouvelles générations<br>
+                    • Centraliser les informations et archives<br>
+                    • Proposer une découverte moderne et accessible
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Nous contacter</h2>
+                <p>
+                    Pour toute question, suggestion ou contribution, n’hésitez pas à nous contacter
+                    via notre site internet ou nos réseaux.
+                </p>
+            </div>
+
+            <div class="retour">
+                <a href="index.html" class="bouton">Retour à l’accueil</a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
