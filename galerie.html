@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Galerie photo - Les Blockhaus Lyssois</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===========================
+           BASE
+           =========================== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* ===========================
+           GALERIE
+           =========================== */
+        .container {
+            width: 85%;
+            margin: 40px auto;
+        }
+
+        .galerie {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .photo {
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 4px 4px 14px rgba(0,0,0,0.3);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: 
+                transform 0.8s ease,
+                opacity 0.8s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .photo.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.08);
+        }
+
+        .photo:hover {
+            box-shadow: 8px 8px 22px rgba(0,0,0,0.4);
+        }
+
+        /* ===========================
+           BOUTON RETOUR
+           =========================== */
+        .retour {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 14px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 14px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+        }
+
+        /* ===========================
+           MOBILE
+           =========================== */
+        @media screen and (max-width: 768px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <h1>Galerie photo</h1>
+        <p>Blockhaus, vestiges et patrimoine local</p>
+    </header>
+
+    <div class="container">
+        <div class="galerie">
+
+            <!-- REMPLACE les images par les tiennes -->
+            <div class="photo"><img src="photo1.jpg" alt="Blockhaus 1"></div>
+            <div class="photo"><img src="photo2.jpg" alt="Blockhaus 2"></div>
+            <div class="photo"><img src="photo3.jpg" alt="Blockhaus 3"></div>
+            <div class="photo"><img src="photo4.jpg" alt="Blockhaus 4"></div>
+            <div class="photo"><img src="photo5.jpg" alt="Blockhaus 5"></div>
+            <div class="photo"><img src="photo6.jpg" alt="Blockhaus 6"></div>
+
+        </div>
+
+        <div class="retour">
+            <a href="index.html" class="bouton">← Retour à l’accueil</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===========================
+     ANIMATION AU DÉFILEMENT
+     =========================== -->
+<script>
+    const photos = document.querySelectorAll('.photo');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    photos.forEach(photo => {
+        observer.observe(photo);
+    });
+</script>
+
+</body>
+</html>
