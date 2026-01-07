@@ -2,14 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Galerie photo - Les Blockhaus Lyssois</title>
+    <title>Liseuse photo - Les Blockhaus Lyssois</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* ===========================
-           BASE
-           =========================== */
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
@@ -20,93 +17,83 @@
         }
 
         .page {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.93);
             min-height: 100vh;
-            padding-bottom: 50px;
         }
 
+        /* ===========================
+           HEADER
+           =========================== */
         header {
             text-align: center;
             background-color: #e0e0e0;
-            padding: 30px 15px;
+            padding: 25px 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         header h1 {
             margin: 0;
-            font-size: 34px;
+            font-size: 32px;
         }
 
         header p {
-            margin-top: 10px;
+            margin-top: 8px;
             font-style: italic;
             font-size: 18px;
         }
 
         /* ===========================
-           GALERIE
+           LISEUSE
            =========================== */
-        .container {
-            width: 85%;
-            margin: 40px auto;
+        .liseuse {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
         }
 
-        .galerie {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        .titre-photo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeIn 0.6s ease;
         }
 
-        .photo {
+        .photo-container {
+            max-width: 90%;
+            max-height: 70vh;
             overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 4px 4px 14px rgba(0,0,0,0.3);
-            transform: translateY(30px);
-            opacity: 0;
-            transition: 
-                transform 0.8s ease,
-                opacity 0.8s ease,
-                box-shadow 0.3s ease;
+            border-radius: 18px;
+            box-shadow: 6px 6px 20px rgba(0,0,0,0.35);
         }
 
-        .photo.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .photo img {
+        .photo-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .photo:hover img {
-            transform: scale(1.08);
-        }
-
-        .photo:hover {
-            box-shadow: 8px 8px 22px rgba(0,0,0,0.4);
+            animation: zoomIn 0.6s ease;
         }
 
         /* ===========================
-           BOUTON RETOUR
+           CONTROLES
            =========================== */
-        .retour {
-            text-align: center;
-            margin-top: 50px;
+        .controls {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .bouton {
-            display: inline-block;
             background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
             border: 2px solid #333;
-            padding: 14px 30px;
-            font-size: 20px;
-            text-decoration: none;
-            color: black;
+            padding: 12px 26px;
+            font-size: 18px;
             border-radius: 14px;
+            cursor: pointer;
             box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
@@ -117,20 +104,32 @@
         }
 
         /* ===========================
+           ANIMATIONS
+           =========================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(1.05); }
+            to   { transform: scale(1); }
+        }
+
+        /* ===========================
            MOBILE
            =========================== */
         @media screen and (max-width: 768px) {
+            .titre-photo {
+                font-size: 20px;
+            }
 
             header h1 {
-                font-size: 26px;
+                font-size: 24px;
             }
 
             header p {
                 font-size: 16px;
-            }
-
-            .container {
-                width: 95%;
             }
         }
     </style>
@@ -140,48 +139,101 @@
 <div class="page">
 
     <header>
-        <h1>Galerie photo</h1>
-        <p>Blockhaus, vestiges et patrimoine local</p>
+        <h1>Liseuse photo</h1>
+        <p>Blockhaus et patrimoine lyssois</p>
     </header>
 
-    <div class="container">
-        <div class="galerie">
+    <div class="liseuse">
 
-            <!-- REMPLACE les images par les tiennes -->
-            <div class="photo"><img src="photo1.jpg" alt="Blockhaus 1"></div>
-            <div class="photo"><img src="photo2.jpg" alt="Blockhaus 2"></div>
-            <div class="photo"><img src="photo3.jpg" alt="Blockhaus 3"></div>
-            <div class="photo"><img src="photo4.jpg" alt="Blockhaus 4"></div>
-            <div class="photo"><img src="photo5.jpg" alt="Blockhaus 5"></div>
-            <div class="photo"><img src="photo6.jpg" alt="Blockhaus 6"></div>
-
+        <!-- TITRE DE LA PHOTO -->
+        <div id="titre" class="titre-photo">
+            Blockhaus du canal de la Deûle
         </div>
 
-        <div class="retour">
-            <a href="index.html" class="bouton">← Retour à l’accueil</a>
+        <!-- IMAGE -->
+        <div class="photo-container">
+            <img id="photo" src="photo1.jpg" alt="Blockhaus">
         </div>
+
+        <!-- CONTROLES -->
+        <div class="controls">
+            <button class="bouton" onclick="precedent()">← Précédent</button>
+            <button class="bouton" onclick="suivant()">Suivant →</button>
+            <a href="index.html" class="bouton">Retour</a>
+        </div>
+
     </div>
 
 </div>
 
-<!-- ===========================
-     ANIMATION AU DÉFILEMENT
-     =========================== -->
 <script>
-    const photos = document.querySelectorAll('.photo');
+    const galerie = [
+        {
+            src: "photo1.jpg",
+            titre: "Blockhaus du canal de la Deûle"
+        },
+        {
+            src: "photo2.jpg",
+            titre: "Entrée principale du blockhaus"
+        },
+        {
+            src: "photo3.jpg",
+            titre: "Poste d’observation allemand"
+        },
+        {
+            src: "photo4.jpg",
+            titre: "Intérieur – salle de tir"
+        },
+        {
+            src: "photo5.jpg",
+            titre: "Vestige camouflé dans la végétation"
+        }
+    ];
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.2
+    let index = 0;
+    const img = document.getElementById("photo");
+    const titre = document.getElementById("titre");
+
+    function afficher() {
+        img.style.opacity = 0;
+        titre.style.opacity = 0;
+
+        setTimeout(() => {
+            img.src = galerie[index].src;
+            titre.textContent = galerie[index].titre;
+            img.style.opacity = 1;
+            titre.style.opacity = 1;
+        }, 200);
+    }
+
+    function suivant() {
+        index = (index + 1) % galerie.length;
+        afficher();
+    }
+
+    function precedent() {
+        index = (index - 1 + galerie.length) % galerie.length;
+        afficher();
+    }
+
+    /* Clavier */
+    document.addEventListener("keydown", e => {
+        if (e.key === "ArrowRight") suivant();
+        if (e.key === "ArrowLeft") precedent();
+        if (e.key === "Escape") window.location.href = "index.html";
     });
 
-    photos.forEach(photo => {
-        observer.observe(photo);
+    /* Swipe mobile */
+    let startX = 0;
+
+    img.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+    });
+
+    img.addEventListener("touchend", e => {
+        let endX = e.changedTouches[0].clientX;
+        if (endX < startX - 50) suivant();
+        if (endX > startX + 50) precedent();
     });
 </script>
 
