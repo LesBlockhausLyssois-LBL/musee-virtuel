@@ -145,6 +145,14 @@
 
     <div class="liseuse">
 
+        <!-- TITRE PHOTO -->
+        <div class="titre-photo" id="titre"></div>
+
+        <!-- PHOTO -->
+        <div class="photo-container">
+            <img id="photo" src="" alt="Photo du blockhaus">
+        </div>
+
         <!-- CONTROLES -->
         <div class="controls">
             <button class="bouton" onclick="precedent()">← Précédent</button>
@@ -225,6 +233,9 @@
         if (endX < startX - 50) suivant();
         if (endX > startX + 50) precedent();
     });
+
+    /* Affichage initial */
+    afficher();
 </script>
 
 </body>
