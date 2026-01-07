@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>Musée virtuel - Les blockhaus lyssois</title>
 
+    <!-- Optimisation mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        /* Réinitialisation simple */
+        /* ===========================
+           BASE
+           =========================== */
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
@@ -15,17 +20,20 @@
             background-attachment: fixed;
         }
 
-        /* Fond clair pour la lisibilité */
         .page {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.88);
             min-height: 100vh;
             padding-bottom: 50px;
         }
 
+        /* ===========================
+           HEADER
+           =========================== */
         header {
             text-align: center;
-            background-color: #d9d9d9;
-            padding: 30px 10px;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         header h1 {
@@ -39,30 +47,57 @@
             font-size: 18px;
         }
 
+        /* ===========================
+           CONTENU
+           =========================== */
         .container {
             width: 80%;
             margin: 40px auto;
             text-align: center;
         }
 
+        .ligne {
+            margin-top: 35px;
+        }
+
+        /* ===========================
+           BOUTONS MODERNES
+           =========================== */
         .bouton {
             display: inline-block;
-            background-color: #e0e0e0;
-            border: 3px solid black;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
             padding: 15px 30px;
             margin: 15px;
             font-size: 20px;
             text-decoration: none;
             color: black;
+            border-radius: 14px;
+            box-sizing: border-box;
+
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
         }
 
+        .bouton:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+            background: linear-gradient(145deg, #ffffff, #e2e2e2);
+        }
+
+        .bouton:active {
+            transform: scale(0.97);
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Tailles */
         .grand {
             width: 60%;
             font-size: 26px;
-        }
-
-        .ligne {
-            margin-top: 40px;
         }
 
         .moyen {
@@ -72,6 +107,40 @@
         .large {
             width: 45%;
         }
+
+        /* ===========================
+           MOBILE
+           =========================== */
+        @media screen and (max-width: 768px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 95%;
+                margin: 25px auto;
+            }
+
+            .bouton {
+                width: 100% !important;
+                margin: 12px 0;
+                font-size: 18px;
+                padding: 16px;
+            }
+
+            .grand {
+                font-size: 22px;
+            }
+
+            .ligne {
+                margin-top: 25px;
+            }
+        }
     </style>
 </head>
 
@@ -79,8 +148,8 @@
     <div class="page">
 
         <header>
-            <h1>musée virtuel du groupe les blockhaus lyssois</h1>
-            <p>“découvrir l’histoire de sa région à travers le béton”</p>
+            <h1>Musée virtuel du groupe Les Blockhaus Lyssois</h1>
+            <p>« Découvrir l’histoire de sa région à travers le béton »</p>
         </header>
 
         <div class="container">
@@ -88,19 +157,20 @@
             <a href="#visite" class="bouton grand">Visite du musée</a>
 
             <div class="ligne">
-                <a href="#plus d'infos" class="bouton moyen">plus d’information</a>
-                <a href="#chapitres personnalisées" class="bouton moyen">chapitres personnalisées</a>
-                <a href="#" class="bouton moyen">visite virtuelle d’un blockhaus</a>
+                <a href="#infos" class="bouton moyen">Plus d’informations</a>
+                <a href="#chapitres" class="bouton moyen">Chapitres personnalisés</a>
+                <a href="#" class="bouton moyen">Visite virtuelle d’un blockhaus</a>
                 <a href="pas_d'exposition_pour_le_moment.html" class="bouton moyen">Expositions virtuelles</a>
+                <a href="galerie.html" class="bouton moyen">Galerie photo</a>
             </div>
 
             <div class="ligne">
-                <a href="https://lesblockhauslyssois-lbl.github.io/livre/" class="bouton large">notre bibliothèque</a>
-                <a href="nouveautés.html" class="bouton large">nouveautés</a>
+                <a href="https://lesblockhauslyssois-lbl.github.io/livre/" class="bouton large">Notre bibliothèque</a>
+                <a href="nouveautés.html" class="bouton large">Nouveautés</a>
             </div>
 
             <div class="ligne">
-                <a href="https://lesblockhauslyssois-lbl.github.io/LBL/" class="bouton large">notre site internet</a>
+                <a href="https://lesblockhauslyssois-lbl.github.io/LBL/" class="bouton large">Notre site internet</a>
             </div>
 
         </div>
