@@ -1,1 +1,137 @@
-<p>Pas d'expo pour le moment ! Revenez ici plus tard</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Expositions virtuelles</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255, 255, 255, 0.88);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 18px;
+            padding: 45px 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .info-box h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .info-box p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .info-box span {
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 14px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+        }
+
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .info-box h2 {
+                font-size: 24px;
+            }
+
+            .info-box p {
+                font-size: 18px;
+            }
+
+            .bouton {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <h1>Musée virtuel du groupe Les Blockhaus Lyssois</h1>
+        <p>« Découvrir l’histoire de sa région à travers le béton »</p>
+    </header>
+
+    <div class="container">
+        <div class="info-box">
+            <h2>Expositions virtuelles</h2>
+
+            <p>
+                Aucune exposition virtuelle n’est disponible pour le moment.
+                <span>De nouveaux contenus seront bientôt accessibles.</span>
+            </p>
+
+            <a href="index.html" class="bouton">Retour à l’accueil</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
