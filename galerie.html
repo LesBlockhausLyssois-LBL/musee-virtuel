@@ -17,14 +17,18 @@
             background-attachment: fixed;
         }
 
+        /* Fix mobile */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+        }
+
         .page {
             background-color: rgba(255, 255, 255, 0.93);
             min-height: 100vh;
         }
 
-        /* ===========================
-           HEADER
-           =========================== */
         header {
             text-align: center;
             background-color: #e0e0e0;
@@ -43,9 +47,6 @@
             font-size: 18px;
         }
 
-        /* ===========================
-           LISEUSE
-           =========================== */
         .liseuse {
             display: flex;
             flex-direction: column;
@@ -71,6 +72,7 @@
             overflow: hidden;
             border-radius: 18px;
             box-shadow: 6px 6px 20px rgba(0,0,0,0.35);
+            transform: translateZ(0); /* boost GPU */
         }
 
         .photo-container img {
@@ -83,9 +85,6 @@
             will-change: opacity, transform;
         }
 
-        /* ===========================
-           CONTROLES
-           =========================== */
         .controls {
             margin-top: 25px;
             display: flex;
@@ -110,9 +109,6 @@
             box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
         }
 
-        /* ===========================
-           MOBILE
-           =========================== */
         @media screen and (max-width: 768px) {
             .titre-photo {
                 font-size: 20px;
@@ -139,15 +135,12 @@
 
     <div class="liseuse">
 
-        <!-- TITRE PHOTO -->
         <div class="titre-photo" id="titre"></div>
 
-        <!-- PHOTO -->
         <div class="photo-container">
             <img id="photo" src="" alt="Photo du blockhaus">
         </div>
 
-        <!-- CONTROLES -->
         <div class="controls">
             <button class="bouton" onclick="precedent()">← Précédent</button>
             <button class="bouton" onclick="suivant()">Suivant →</button>
@@ -160,12 +153,18 @@
 
 <script>
     const galerie = [
-        { src: "Photos/BEF322.jpg", titre: "un blockhaus pour canon de la BEF" },
+        { src: "Photos/BEF322.jpg", titre: "Un blockhaus pour canon de la BEF" },
         { src: "Photos/casmemate.jpg", titre: "Une casemate d'artillerie de la BEF" },
         { src: "Photos/1420.jpg", titre: "Un pillbox dans la plaine de Beaulieu à Wattrelos" },
-        { src: "Photos/cambuis.jpg", titre: "Le poste de tir du cambuis à Hem" },
+        { src: "Photos/cambuis.jpg", titre: "Le poste de tir du Cambuis à Hem" },
         { src: "Photos/pdt.jpg", titre: "Poste de tir d'un blockhaus français" }
     ];
+
+    /* Préchargement des images */
+    galerie.forEach(item => {
+        const imgPreload = new Image();
+        imgPreload.src = item.src;
+    });
 
     let index = 0;
     const img = document.getElementById("photo");
@@ -177,9 +176,11 @@
         titre.style.opacity = 0;
         titre.style.transform = "translateY(10px)";
 
-        setTimeout(() => {
-            img.src = galerie[index].src;
-            titre.textContent = galerie[index].titre;
+        const nouvelleImage = galerie[index].src;
+        const nouveauTitre = galerie[index].titre;
+
+        img.onload = () => {
+            titre.textContent = nouveauTitre;
 
             requestAnimationFrame(() => {
                 img.style.opacity = 1;
@@ -187,7 +188,9 @@
                 titre.style.opacity = 1;
                 titre.style.transform = "translateY(0)";
             });
-        }, 180);
+        };
+
+        img.src = nouvelleImage;
     }
 
     function suivant() {
@@ -200,7 +203,6 @@
         afficher();
     }
 
-    /* Clavier */
     document.addEventListener("keydown", e => {
         if (e.key === "ArrowRight") suivant();
         if (e.key === "ArrowLeft") precedent();
