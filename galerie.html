@@ -59,7 +59,10 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
-            animation: fadeIn 0.6s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+            will-change: opacity, transform;
         }
 
         .photo-container {
@@ -74,7 +77,10 @@
             width: 100%;
             height: auto;
             display: block;
-            animation: zoomIn 0.6s ease;
+            opacity: 0;
+            transform: scale(1.04);
+            transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+            will-change: opacity, transform;
         }
 
         /* ===========================
@@ -102,19 +108,6 @@
         .bouton:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
-        }
-
-        /* ===========================
-           ANIMATIONS
-           =========================== */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(1.05); }
-            to   { transform: scale(1); }
         }
 
         /* ===========================
@@ -167,26 +160,11 @@
 
 <script>
     const galerie = [
-        {
-            src: "Photos/BEF322.jpg",
-            titre: "un blockhaus pour canon de la BEF"
-        },
-        {
-            src: "Photos/casmemate.jpg",
-            titre: "Une casemate d'artillerie de la BEF"
-        },
-        {
-            src: "Photos/1420.jpg",
-            titre: "Un pillbox dans la plaine de Beaulieu à Wattrelos"
-        },
-        {
-            src: "Photos/cambuis.jpg",
-            titre: "Le poste de tir du cambuis à Hem"
-        },
-        {
-            src: "Photos/pdt.jpg",
-            titre: "Poste de tir d'un blockhaus français"
-        }
+        { src: "Photos/BEF322.jpg", titre: "un blockhaus pour canon de la BEF" },
+        { src: "Photos/casmemate.jpg", titre: "Une casemate d'artillerie de la BEF" },
+        { src: "Photos/1420.jpg", titre: "Un pillbox dans la plaine de Beaulieu à Wattrelos" },
+        { src: "Photos/cambuis.jpg", titre: "Le poste de tir du cambuis à Hem" },
+        { src: "Photos/pdt.jpg", titre: "Poste de tir d'un blockhaus français" }
     ];
 
     let index = 0;
@@ -195,14 +173,21 @@
 
     function afficher() {
         img.style.opacity = 0;
+        img.style.transform = "scale(1.04)";
         titre.style.opacity = 0;
+        titre.style.transform = "translateY(10px)";
 
         setTimeout(() => {
             img.src = galerie[index].src;
             titre.textContent = galerie[index].titre;
-            img.style.opacity = 1;
-            titre.style.opacity = 1;
-        }, 200);
+
+            requestAnimationFrame(() => {
+                img.style.opacity = 1;
+                img.style.transform = "scale(1)";
+                titre.style.opacity = 1;
+                titre.style.transform = "translateY(0)";
+            });
+        }, 180);
     }
 
     function suivant() {
