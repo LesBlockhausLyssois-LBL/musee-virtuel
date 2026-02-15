@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Y2g29xsg/Design-sans-titre-(30).png" />
+    <meta charset="UTF-8">
+    <title>L'histoire des objets - Musée virtuel</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===========================
+           BASE
+        =========================== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255, 255, 255, 0.88);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* ===========================
+           HEADER
+        =========================== */
+        header {
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* ===========================
+           CONTENU
+        =========================== */
+        .container {
+            width: 85%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .objets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .carte {
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .carte:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+        }
+
+        .carte img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .carte h3 {
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        .carte a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* ===========================
+           BOUTON RETOUR
+        =========================== */
+        .retour {
+            margin-top: 40px;
+        }
+
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 14px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+        }
+
+        /* ===========================
+           MOBILE
+        =========================== */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+    <h1>L’histoire des objets</h1>
+    <p>Découvrez l’évolution des inventions qui ont marqué notre quotidien</p>
+</header>
+
+<div class="container">
+
+    <div class="objets">
+
+        <!-- Téléphone -->
+        <div class="carte">
+            <a href="telephone.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Telephone_early_model.jpg" alt="Téléphone ancien">
+                <h3>Le Téléphone</h3>
+            </a>
+        </div>
+
+        <!-- Machine à écrire -->
+        <div class="carte">
+            <a href="machine-ecrire.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Typewriter.jpg" alt="Machine à écrire">
+                <h3>La Machine à écrire</h3>
+            </a>
+        </div>
+
+        <!-- Radio -->
+        <div class="carte">
+            <a href="radio.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Old_radio.jpg" alt="Radio ancienne">
+                <h3>La Radio</h3>
+            </a>
+        </div>
+
+        <!-- Ordinateur -->
+        <div class="carte">
+            <a href="ordinateur.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/IBM_PC_5150.jpg" alt="Ancien ordinateur">
+                <h3>L’Ordinateur</h3>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="retour">
+        <a href="index.html" class="bouton">Retour à l’accueil</a>
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>
