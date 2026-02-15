@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>L’insigne "Nous vaincrons"</title>
 
-    <!-- Optimisation mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+
         /* ===========================
            BASE
            =========================== */
@@ -21,7 +21,7 @@
         }
 
         .page {
-            background-color: rgba(255, 255, 255, 0.88);
+            background-color: rgba(255, 255, 255, 0.9);
             min-height: 100vh;
             padding-bottom: 50px;
         }
@@ -60,15 +60,15 @@
             text-align: center;
         }
 
-        .section h2 {
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
-
         .section p {
             font-size: 18px;
             line-height: 1.6;
             text-align: justify;
+        }
+
+        .section h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
         }
 
         /* ===========================
@@ -97,35 +97,25 @@
         }
 
         /* ===========================
-           BOUTONS
+           BOUTON
            =========================== */
         .bouton {
             display: inline-block;
             background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
             border: 2px solid #333;
             padding: 15px 30px;
-            margin: 15px;
+            margin-top: 30px;
             font-size: 20px;
             text-decoration: none;
             color: black;
             border-radius: 14px;
-            box-sizing: border-box;
             box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                background 0.25s ease;
+            transition: all 0.25s ease;
         }
 
         .bouton:hover {
-            transform: translateY(-6px) scale(1.04);
+            transform: translateY(-5px);
             box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
-            background: linear-gradient(145deg, #ffffff, #e2e2e2);
-        }
-
-        .bouton:active {
-            transform: scale(0.97);
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
         }
 
         .retour {
@@ -138,17 +128,12 @@
            =========================== */
         @media screen and (max-width: 768px) {
 
-            header h1 {
-                font-size: 26px;
-            }
-
-            header p {
-                font-size: 16px;
-            }
-
             .container {
                 width: 95%;
-                margin: 25px auto;
+            }
+
+            header h1 {
+                font-size: 26px;
             }
 
             .section p {
@@ -157,8 +142,6 @@
 
             .bouton {
                 width: 100%;
-                margin: 12px 0;
-                font-size: 18px;
                 padding: 16px;
             }
         }
@@ -178,27 +161,26 @@
 
         <div class="section">
             <p>
-                L’insigne « nous vaincrons » est un cadeau destiné aux troupes de la B.E.F 
-                (British Expeditionary Force) par les Français.
-                Cependant, l’invasion allemande de mai 1940 survient avant le début de la distribution.
-                Les insignes resteront donc stockés et ne seront jamais remis aux soldats comme prévu.
+                L’insigne « nous vaincrons » est un cadeau destiné aux troupes de la 
+                B.E.F (British Expeditionary Force) par les Français.
+                Cependant, l’invasion allemande de mai 1940 survient avant le début 
+                de la distribution. Les insignes resteront donc stockés et ne seront 
+                jamais remis aux soldats comme prévu.
             </p>
         </div>
 
         <div class="section">
             <h2>Version dorée</h2>
-
             <div class="image-block">
-                <img src="objets/insignedoré.png" alt="Insigne version dorée">
+                <img src="objets/insigne_dore.png" alt="Insigne version doree">
                 <div class="legend">Insigne version dorée</div>
             </div>
         </div>
 
         <div class="section">
             <h2>Version argentée</h2>
-
             <div class="image-block">
-                <img src="objets/insigneargenté.png" alt="Insigne version argentée">
+                <img src="objets/insigne_argente.png" alt="Insigne version argentee">
                 <div class="legend">Insigne version argentée</div>
             </div>
         </div>
@@ -212,4 +194,3 @@
 </div>
 </body>
 </html>
-
