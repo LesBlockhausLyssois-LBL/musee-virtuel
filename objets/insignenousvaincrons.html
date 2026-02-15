@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>L’insigne "Nous vaincrons"</title>
+
+    <!-- Optimisation mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===========================
+           BASE
+           =========================== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255, 255, 255, 0.88);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* ===========================
+           HEADER
+           =========================== */
+        header {
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* ===========================
+           CONTENU
+           =========================== */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ===========================
+           IMAGES
+           =========================== */
+        .image-block {
+            margin: 30px 0;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 6px 6px 18px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .image-block img:hover {
+            transform: scale(1.03);
+        }
+
+        .legend {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 16px;
+        }
+
+        /* ===========================
+           BOUTONS
+           =========================== */
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 14px;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+            background: linear-gradient(145deg, #ffffff, #e2e2e2);
+        }
+
+        .bouton:active {
+            transform: scale(0.97);
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+        }
+
+        .retour {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ===========================
+           MOBILE
+           =========================== */
+        @media screen and (max-width: 768px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 95%;
+                margin: 25px auto;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+
+            .bouton {
+                width: 100%;
+                margin: 12px 0;
+                font-size: 18px;
+                padding: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <h1>L’insigne "Nous vaincrons"</h1>
+        <p>Un symbole franco-britannique de 1940</p>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <p>
+                L’insigne « nous vaincrons » est un cadeau destiné aux troupes de la B.E.F 
+                (British Expeditionary Force) par les Français.
+                Cependant, l’invasion allemande de mai 1940 survient avant le début de la distribution.
+                Les insignes resteront donc stockés et ne seront jamais remis aux soldats comme prévu.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Version dorée</h2>
+
+            <div class="image-block">
+                <img src="images/image2.png" alt="Insigne version dorée">
+                <div class="legend">Insigne version dorée</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Version argentée</h2>
+
+            <div class="image-block">
+                <img src="images/image1.png" alt="Insigne version argentée">
+                <div class="legend">Insigne version argentée</div>
+            </div>
+        </div>
+
+        <div class="retour">
+            <a href="index.html" class="bouton">Retour à l’accueil</a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
