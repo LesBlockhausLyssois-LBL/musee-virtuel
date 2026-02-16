@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le masque anti-gaz civil</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* ===========================
+           BASE
+           =========================== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("../arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255,255,255,0.9);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* ===========================
+           HEADER
+           =========================== */
+        header {
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 30px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* ===========================
+           CONTENU
+           =========================== */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ===========================
+           IMAGES
+           =========================== */
+        .image-block {
+            margin: 30px 0;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 6px 6px 18px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .image-block img:hover {
+            transform: scale(1.03);
+        }
+
+        .legend {
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* ===========================
+           BOUTON
+           =========================== */
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 14px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.25s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+        }
+
+        .retour {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ===========================
+           MOBILE
+           =========================== */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+
+            .bouton {
+                width: 100%;
+                padding: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <h1>Le masque anti-gaz civil</h1>
+        <p>Protection des populations durant la Seconde Guerre mondiale</p>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <p>
+                Ce masque anti-gaz était distribué aux civils dans l’éventualité
+                d’une attaque aux gaz de combat. Chaque personne disposait de son
+                propre masque à domicile. Il était protégé par une boîte en aluminium
+                et pouvait être rechargé grâce à des cartouches filtrantes.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="image-block">
+                <img src="masque1.png" alt="Masque anti-gaz civil">
+                <div class="legend">La boîte</div>
+            </div>
+
+            <div class="image-block">
+                <img src="masque2.png" alt="Boite du masque anti-gaz">
+                <div class="legend">Le masque à coté de sa boîte</div>
+            </div>
+
+            <div class="image-block">
+                <img src="masque3.png" alt="Cartouche masque anti-gaz">
+                <div class="legend">Plan en coupe d’une cartouche filtrante</div>
+            </div>
+        </div>
+
+        <div class="retour">
+            <a href="https://lesblockhauslyssois-lbl.github.io/musee-virtuel/objets.html" class="bouton">Retour à l’accueil</a>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
