@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Musée Virtuel - Accueil</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* ===========================
+           BASE
+           =========================== */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("arriereplan.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            background-color: rgba(255,255,255,0.9);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .accueil-container {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        /* ===========================
+           IMAGE
+           =========================== */
+        .accueil-image img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 8px 8px 25px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .accueil-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===========================
+           BOUTON
+           =========================== */
+        .bouton {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+            border: 2px solid #333;
+            padding: 20px 50px;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+            border-radius: 16px;
+            box-shadow: 6px 6px 18px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .bouton:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+        }
+
+        .bouton:active {
+            transform: scale(0.97);
+        }
+
+        /* ===========================
+           MOBILE
+           =========================== */
+        @media screen and (max-width: 768px) {
+
+            .bouton {
+                width: 100%;
+                padding: 18px;
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="accueil-container">
+
+        <div class="accueil-image">
+            <!-- Remplace photo_accueil.jpg par ton image -->
+            <img src="photo_accueil.jpg" alt="Musée virtuel">
+        </div>
+
+        <!-- Modifie le lien si besoin -->
+        <a href="objets/insignenousvaincrons.html" class="bouton">
+            Visiter le musée
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
