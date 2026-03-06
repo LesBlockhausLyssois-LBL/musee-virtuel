@@ -7,14 +7,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- PDF.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 <style>
-
-/* ===========================
-BASE
-=========================== */
 
 body{
     margin:0;
@@ -30,10 +25,6 @@ body{
     min-height:100vh;
     padding-bottom:50px;
 }
-
-/* ===========================
-HEADER
-=========================== */
 
 header{
     text-align:center;
@@ -53,10 +44,6 @@ header p{
     font-size:18px;
 }
 
-/* ===========================
-LECTEUR PDF
-=========================== */
-
 .viewer{
     text-align:center;
     margin-top:40px;
@@ -67,10 +54,6 @@ canvas{
     box-shadow:0 10px 30px rgba(0,0,0,0.35);
     border-radius:8px;
 }
-
-/* ===========================
-BOUTONS
-=========================== */
 
 .controls{
     margin-top:25px;
@@ -100,9 +83,17 @@ BOUTONS
     font-size:18px;
 }
 
-/* ===========================
-MOBILE
-=========================== */
+/* SECTION FIN */
+
+.fin-visite{
+    display:none;
+    margin-top:40px;
+    text-align:center;
+}
+
+.fin-visite h2{
+    margin-bottom:15px;
+}
 
 @media screen and (max-width:768px){
 
@@ -128,7 +119,7 @@ canvas{
 <div class="page">
 
 <header>
-<h1>Visite du musé</h1>
+<h1>Visite du musée</h1>
 <p>Consultez les panneaux page par page</p>
 </header>
 
@@ -148,13 +139,25 @@ Page <span id="page-num"></span> / <span id="page-count"></span>
 
 </div>
 
+<!-- BOUTONS FIN -->
+
+<div class="fin-visite" id="fin-visite">
+
+<h2>Fin de la visite</h2>
+
+<a href="avis.html" class="bouton">⭐ Laisser un avis</a>
+
+<a href="https://lesblockhauslyssois-lbl.github.io/musee-virtuel/" class="bouton">🏠 Revenir à l'accueil</a>
+
+</div>
+
 </div>
 
 </div>
 
 <script>
 
-const url = "visitebeta.pdf"; // remplace par ton PDF
+const url = "visitebeta.pdf";
 
 let pdfDoc = null,
 pageNum = 1,
@@ -193,6 +196,14 @@ pageNumIsPending = null;
 });
 
 document.querySelector("#page-num").textContent = num;
+
+/* AFFICHAGE DES BOUTONS FIN */
+
+if(num === pdfDoc.numPages){
+document.getElementById("fin-visite").style.display = "block";
+}else{
+document.getElementById("fin-visite").style.display = "none";
+}
 
 });
 
