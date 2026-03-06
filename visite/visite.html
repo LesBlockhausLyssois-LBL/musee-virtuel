@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/Y2g29xsg/Design-sans-titre-(30).png" />
+<meta charset="UTF-8">
+<title>Liseuse PDF - Musée virtuel</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<style>
+
+/* ===========================
+BASE
+=========================== */
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image:url("arriereplan.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.page{
+    background-color:rgba(255,255,255,0.88);
+    min-height:100vh;
+    padding-bottom:50px;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+    text-align:center;
+    background-color:#e0e0e0;
+    padding:30px 15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1{
+    margin:0;
+    font-size:36px;
+}
+
+header p{
+    margin-top:10px;
+    font-style:italic;
+    font-size:18px;
+}
+
+/* ===========================
+LECTEUR PDF
+=========================== */
+
+.viewer{
+    text-align:center;
+    margin-top:40px;
+}
+
+canvas{
+    max-width:90%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    border-radius:8px;
+}
+
+/* ===========================
+BOUTONS
+=========================== */
+
+.controls{
+    margin-top:25px;
+}
+
+.bouton{
+    display:inline-block;
+    background:linear-gradient(145deg,#f4f4f4,#d8d8d8);
+    border:2px solid #333;
+    padding:15px 30px;
+    margin:10px;
+    font-size:18px;
+    text-decoration:none;
+    color:black;
+    border-radius:14px;
+    box-shadow:4px 4px 12px rgba(0,0,0,0.25);
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.bouton:hover{
+    transform:translateY(-6px) scale(1.04);
+    box-shadow:8px 8px 20px rgba(0,0,0,0.35);
+}
+
+.page-info{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* ===========================
+MOBILE
+=========================== */
+
+@media screen and (max-width:768px){
+
+header h1{
+    font-size:26px;
+}
+
+canvas{
+    max-width:95%;
+}
+
+.bouton{
+    width:80%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header>
+<h1>Visite du musé</h1>
+<p>Consultez les panneaux page par page</p>
+</header>
+
+<div class="viewer">
+
+<canvas id="pdf-render"></canvas>
+
+<div class="page-info">
+Page <span id="page-num"></span> / <span id="page-count"></span>
+</div>
+
+<div class="controls">
+
+<button class="bouton" id="prev-page">⬅ Page précédente</button>
+
+<button class="bouton" id="next-page">Page suivante ➡</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const url = "visitebeta.pdf"; // remplace par ton PDF
+
+let pdfDoc = null,
+pageNum = 1,
+pageIsRendering = false,
+pageNumIsPending = null;
+
+const scale = 1.5,
+canvas = document.querySelector("#pdf-render"),
+ctx = canvas.getContext("2d");
+
+const renderPage = num => {
+
+pageIsRendering = true;
+
+pdfDoc.getPage(num).then(page => {
+
+const viewport = page.getViewport({scale});
+
+canvas.height = viewport.height;
+canvas.width = viewport.width;
+
+const renderCtx = {
+canvasContext: ctx,
+viewport
+};
+
+page.render(renderCtx).promise.then(()=>{
+
+pageIsRendering = false;
+
+if(pageNumIsPending !== null){
+renderPage(pageNumIsPending);
+pageNumIsPending = null;
+}
+
+});
+
+document.querySelector("#page-num").textContent = num;
+
+});
+
+};
+
+const queueRenderPage = num => {
+if(pageIsRendering){
+pageNumIsPending = num;
+}else{
+renderPage(num);
+}
+};
+
+const showPrevPage = () => {
+if(pageNum <= 1){
+return;
+}
+pageNum--;
+queueRenderPage(pageNum);
+};
+
+const showNextPage = () => {
+if(pageNum >= pdfDoc.numPages){
+return;
+}
+pageNum++;
+queueRenderPage(pageNum);
+};
+
+document.querySelector("#prev-page").addEventListener("click", showPrevPage);
+document.querySelector("#next-page").addEventListener("click", showNextPage);
+
+pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+
+pdfDoc = pdfDoc_;
+
+document.querySelector("#page-count").textContent = pdfDoc.numPages;
+
+renderPage(pageNum);
+
+});
+
+</script>
+
+</body>
+</html>
