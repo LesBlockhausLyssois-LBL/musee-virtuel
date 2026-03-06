@@ -83,11 +83,9 @@ canvas{
     font-size:18px;
 }
 
-/* SECTION FIN */
-
 .fin-visite{
     display:none;
-    margin-top:40px;
+    margin-bottom:30px;
     text-align:center;
 }
 
@@ -125,6 +123,16 @@ canvas{
 
 <div class="viewer">
 
+<div class="fin-visite" id="fin-visite">
+
+<h2>Fin de la visite</h2>
+
+<a href="avis.html" class="bouton">Laisser un avis</a>
+
+<a href="https://lesblockhauslyssois-lbl.github.io/musee-virtuel/" class="bouton">Revenir à l'accueil</a>
+
+</div>
+
 <canvas id="pdf-render"></canvas>
 
 <div class="page-info">
@@ -133,21 +141,9 @@ Page <span id="page-num"></span> / <span id="page-count"></span>
 
 <div class="controls">
 
-<button class="bouton" id="prev-page">⬅ Page précédente</button>
+<button class="bouton" id="prev-page">Page précédente</button>
 
-<button class="bouton" id="next-page">Page suivante ➡</button>
-
-</div>
-
-<!-- BOUTONS FIN -->
-
-<div class="fin-visite" id="fin-visite">
-
-<h2>Fin de la visite</h2>
-
-<a href="avis.html" class="bouton">⭐ Laisser un avis</a>
-
-<a href="https://lesblockhauslyssois-lbl.github.io/musee-virtuel/" class="bouton">🏠 Revenir à l'accueil</a>
+<button class="bouton" id="next-page">Page suivante</button>
 
 </div>
 
@@ -196,8 +192,6 @@ pageNumIsPending = null;
 });
 
 document.querySelector("#page-num").textContent = num;
-
-/* AFFICHAGE DES BOUTONS FIN */
 
 if(num === pdfDoc.numPages){
 document.getElementById("fin-visite").style.display = "block";
