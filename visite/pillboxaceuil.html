@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<link rel="icon" type="image/png" href="https://i.postimg.cc/Y2g29xsg/Design-sans-titre-(30).png" />
+<meta charset="UTF-8">
+<title>Structure d’un blockhaus</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ===========================
+BASE
+=========================== */
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background-image:url("arriereplan.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.page{
+background-color:rgba(255,255,255,0.88);
+min-height:100vh;
+padding-bottom:50px;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+text-align:center;
+background-color:#e0e0e0;
+padding:30px 15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1{
+margin:0;
+font-size:36px;
+}
+
+header p{
+margin-top:10px;
+font-style:italic;
+font-size:18px;
+}
+
+/* ===========================
+CONTENU
+=========================== */
+
+.container{
+width:80%;
+margin:40px auto;
+}
+
+.section{
+margin-bottom:50px;
+text-align:center;
+}
+
+.section h2{
+font-size:28px;
+margin-bottom:20px;
+}
+
+/* ===========================
+IMAGE BLOCKHAUS
+=========================== */
+
+.photo{
+width:100%;
+max-width:700px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* ===========================
+SCHEMA INTERACTIF
+=========================== */
+
+.schema{
+position:relative;
+display:inline-block;
+}
+
+.schema img{
+max-width:700px;
+width:100%;
+}
+
+/* liens positionnés */
+
+.lien{
+position:absolute;
+color:black;
+font-weight:bold;
+text-decoration:none;
+background:rgba(255,255,255,0.8);
+padding:6px 10px;
+border-radius:6px;
+transition:0.2s;
+}
+
+.lien:hover{
+background:#ffffff;
+transform:scale(1.05);
+}
+
+/* positions */
+
+.exterieur{
+top:35%;
+left:-5%;
+}
+
+.creneau_ext{
+top:30%;
+right:-5%;
+}
+
+.creneau_int{
+top:35%;
+left:35%;
+}
+
+.interieur{
+top:55%;
+left:40%;
+}
+
+.entree{
+bottom:-5%;
+left:45%;
+}
+
+/* ===========================
+BOUTON
+=========================== */
+
+.bouton{
+display:inline-block;
+background:linear-gradient(145deg,#f4f4f4,#d8d8d8);
+border:2px solid #333;
+padding:15px 30px;
+margin:15px;
+font-size:20px;
+text-decoration:none;
+color:black;
+border-radius:14px;
+box-shadow:4px 4px 12px rgba(0,0,0,0.25);
+transition:0.25s;
+}
+
+.bouton:hover{
+transform:translateY(-6px) scale(1.04);
+box-shadow:8px 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ===========================
+MOBILE
+=========================== */
+
+@media screen and (max-width:768px){
+
+header h1{
+font-size:26px;
+}
+
+.container{
+width:95%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header>
+<h1>Structure d’un blockhaus</h1>
+<p>Découvrez les différentes parties d’un blockhaus</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+
+<h2>Exemple de blockhaus</h2>
+
+<img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Blockhaus_normandie.jpg">
+
+</div>
+
+<div class="section">
+
+<h2>Schéma interactif</h2>
+
+<div class="schema">
+
+<img src="schema.png">
+
+<a class="lien exterieur" href="#">extérieur du pillbox</a>
+
+<a class="lien creneau_ext" href="#">créneau (extérieur)</a>
+
+<a class="lien creneau_int" href="#">créneau (intérieur)</a>
+
+<a class="lien interieur" href="#">intérieur</a>
+
+<a class="lien entree" href="#">entrée</a>
+
+</div>
+
+</div>
+
+<div style="text-align:center">
+
+<a href="https://lesblockhauslyssois-lbl.github.io/musee-virtuel/" class="bouton">Retour à l’accueil</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
