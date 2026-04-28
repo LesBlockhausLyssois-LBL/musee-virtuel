@@ -1,78 +1,151 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/Y2g29xsg/Design-sans-titre-(30).png" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nouveautés du site</title>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/Y2g29xsg/Design-sans-titre-(30).png" />
 
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
-            color: #000;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nouveautés du site</title>
 
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
-        }
+<style>
 
-        .news-container {
-            max-width: 900px;
-            margin: 0 auto;
-            border: 4px solid #000;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+/* ================= BASE ================= */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../arriereplan.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-        .news-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #000;
-        }
+.page {
+    background-color: rgba(255,255,255,0.9);
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
 
-        .news-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
+/* ================= HEADER ================= */
+header {
+    text-align: center;
+    background-color: #e0e0e0;
+    padding: 30px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-        .date {
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
 
-        .description {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-    </style>
+header p {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+/* ================= CONTENU ================= */
+.container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* ================= NEWS ================= */
+.news-item {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.date {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* ================= BOUTON ================= */
+.bouton {
+    display: inline-block;
+    background: linear-gradient(145deg, #f4f4f4, #d8d8d8);
+    border: 2px solid #333;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    border-radius: 14px;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
+}
+
+.bouton:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.35);
+}
+
+.retour {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ================= MOBILE ================= */
+@media screen and (max-width: 768px) {
+    .container { width: 95%; }
+    header h1 { font-size: 24px; }
+    .description { font-size: 15px; }
+    .bouton { width: 100%; padding: 16px; }
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Nouveautés du musée</h1>
+<div class="page">
 
-<div class="news-container">
+<header>
+    <h1>Nouveautés du musée</h1>
+    <p>Mises à jour du site</p>
+</header>
 
-  <div class="news-item">
-        <div class="date">08/03/26</div>
-        <div class="description">(Beta) toutes les fonctionnalitées sont utilisables.</div>
-    </div>
+<div class="container">
 
  <div class="news-item">
-        <div class="date">16/02/26</div>
-        <div class="description">(Beta) rajout de la page "l'histoire des objets".</div>
-    </div>
- 
-    <div class="news-item">
-        <div class="date">07/01/26</div>
-        <div class="description">(Beta) mise à jour de l'interface et rajout d'une galerie photo.</div>
-    </div>
+    <div class="date">28/04/26</div>
+    <div class="description">(Beta) fin du travaille sur le site.</div>
+</div>
+
+<div class="news-item">
+    <div class="date">08/03/26</div>
+    <div class="description">(Beta) toutes les fonctionnalitées sont utilisables.</div>
+</div>
+
+<div class="news-item">
+    <div class="date">16/02/26</div>
+    <div class="description">(Beta) rajout de la page "l'histoire des objets".</div>
+</div>
+
+<div class="news-item">
+    <div class="date">07/01/26</div>
+    <div class="description">(Beta) mise à jour de l'interface et rajout d'une galerie photo.</div>
+</div>
+
+<div class="retour">
+    <a href="index.html" class="bouton">Retour à l’accueil</a>
+</div>
+
+</div>
 
 </div>
 
